@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+
+
+
+
+<style>
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0099cc;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+
+
+
+
+</style>
+</head>
+<body onload ="setFocus();">
+    <header class="site-header">
+
+
+<header class="site-header">
+        <div class="nav-bar">
+            <div class="container">
+              <div class="row">
+                 <div class="col-12 d-flex flex-wrap align-items-center">
+                   <div class="site-branding d-flex align-items-center">
+                           <a class="d-block" href="home.html" rel="home"><img class="d-block" src="images/medica.gif" alt="logo" width="300" height="150"></a>
+
+
+</div>
+
+
+
+                    </div>
+                </div>
+            	</div>
+      	        </div>
+
+    
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('images/homepage.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-12 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+ 
+
+                                    </header>  
+
+<br> <br> <br> 
+
+<h1> Welcome to <br> Medica Website ! </h1>
+<br> <br> <br> <br> 
+
+
+
+<table style="background-color:#FAFCFC; color:black;" cellspacing="5" cellpading="5" width="60%" align="center"> <tr> <td>
+<p align="justfy"> <font size="3"> Respected, bellow is a login form. 
+You need to log in to access the website, since there is a book appointment form or contact form that need to be reliable. 
+We need to have an identification trace to trust your messages or appointments.  </p>
+</tr> </td>
+
+</table>
+<br> <br> 
+
+<table style="background-color:#FAFCFC; color:black;" cellspacing="5" cellpading="5" width="45%" align="center"> <tr> <td>
+<p align="justfy"> <font size="3"> 
+
+<h1 align="center"> <font size="5"> Login Form </font></h1>
+
+
+  <div class="imgcontainer">
+    <img src="images/avatar.png" alt="Avatar" class="avatar height"150px" width="150px">
+  </div>
+
+  <div class="container">
+<form method="post" action="home.html" name="myForm">
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" onblur="checkIfEmptyUName()">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" onblur="checkIfEmptyPassword()">
+        
+<form method="get" action="home.html">   <button type="submit"> Login </button> </form>
+
+    <label>
+     <span class="psw"> <input type="checkbox" checked="checked" name="remember"> Remember me <span>
+    </label>    
+
+<span class="psw">Do not have an account? <a href="registration.html">Register now!</a></span>
+</div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+</form>
+
+
+</p>
+</font>
+</td> </tr> </style></table>
+
+
+<br> <br> <br> <br> <br>
+
+
+
+                        
+
+		<div class="pagination-wrap position-absolute w-100">
+                <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+           
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br>
+
+<br> <br> <br> <br> 
+
+<table style="color:#ffffff; background-color:#000033;" width="100%" height="60%" cellpading="2" cellspacing="2" > <style="color:white;">
+<tr><td align="right" weight="34%"> <img src="images/medica.gif" alt="" width="240" height="120"> </td> 
+<td align="center" weight="33%"> @ Medica 2018 <br><br> 71000 Sarajevo, Bosnia and Herzegovina <br><br> +378 123 456 <br><br> medica@info.com </td> 
+
+</tr> 
+</style>
+</table>
+</div>
+</div>
+</div>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countdown.min.js'></script>
+    <script type='text/javascript' src='js/circle-progress.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
+    <script type='text/javascript' src='js/jquery.barfiller.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>
+
+   

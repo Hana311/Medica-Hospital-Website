@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+
+
+<script src="js/custom.js"></script>
+<script>
+function setFocus() {
+var uName=document.myForm.name.focus();
+return true;
+}
+function checkIfEmptyName(){
+var nameLength=document.myForm.name.value.length;
+var allowedValue=/^[A-Za-z]+$/;
+	if (nameLength == 0)
+	{
+		alert("Name field cannot be empty !!!");
+		document.myForm.name.focus();
+		return false;
+}
+	else if(document.myForm.name.value.match(allowedValue)){
+	document.myForm.surname.focus();
+	return true;
+}
+else
+{
+alert("Name field needs to be text !!!"); 
+		document.myForm.name.focus();
+		return false;
+}
+}
+function checkIfEmptySurname(){
+	var surnameLength=document.myForm.surname.value.length;
+	var trueValue=/^[A-Za-z]+$/;
+		if (surnameLength == 0)
+		{
+			alert("Surname field cannot be empty !!!");
+			document.myForm.surname.focus();
+			return false;
+}
+		else if(document.myForm.surname.value.match(trueValue))
+	{
+		document.myForm.birthday.focus();
+		return true;
+}
+else{
+			alert("Surname field needs to be text !!!"); 
+			document.myForm.surname.focus();
+			return false;
+}
+}
+
+function checkIfEmptyDate(){
+var dateLength=document.myForm.birthday.value.length;
+var dateValue = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
+	if (dateLength == 0)
+		{
+		alert("Date of Birth field cannot be empty !!!");
+		document.myForm.birthday.focus();
+		return false;
+}
+
+else if (!(document.myForm.birthday.value.match(dateValue))) {
+alert("An invalid date format !!!");
+document.myForm.birthday.focus();
+		return false;
+}
+}
+
+function checkIfEmptyEmail(){
+var emailLength=document.myForm.email.value.length;
+var emailValue=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (emailLength == 0)
+		{
+		alert("Email field cannot be empty !!!");
+		document.myForm.email.focus();
+		return false;
+}
+	else if (document.myForm.email.value.match(emailValue))
+{
+document.myForm.userpassword.focus();
+return true;
+}
+else{
+alert("An invalid e-mail address !!!");
+document.myForm.email.focus();
+return false;
+}
+}
+
+
+function checkIfEmptyPassword(){
+var passwordLength=document.myForm.userpassword.value.length;
+var numberRequired = /[0-9]/g;
+var letterRequired = /[A-Z]/g;
+var symbolRequired = /[@$,<>#:?_*&;!"%&(=)]/g;
+
+	if (passwordLength == 0)
+		{
+alert("Password field cannot be empty !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+else if ((!(document.myForm.userpassword.value.match(numberRequired))) && (!(document.myForm.userpassword.value.match(letterRequired))) && (!(passwordLength > 5 && passwordLength < 16)) && (!(document.myForm.userpassword.value.match(symbolRequired))))
+{
+alert("Password needs to be between 6 and 15 characters long and there needs to be at least one numeric digit, at least one special symbol and at least one uppercase letter in password  !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if ((!(document.myForm.userpassword.value.match(numberRequired))) && (!(document.myForm.userpassword.value.match(letterRequired))) && (!(document.myForm.userpassword.value.match(symbolRequired)))){
+alert(" There needs to be at least one numeric digit, at least one uppercase letter and at least special symbol in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if ((!(document.myForm.userpassword.value.match(letterRequired))) && (!(passwordLength > 5 && passwordLength < 16))){
+alert("Password needs to be between 6 and 15 characters long and there needs to be at least one uppercase letter in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if ((!(document.myForm.userpassword.value.match(numberRequired))) && (!(passwordLength > 5 && passwordLength < 16))){
+alert("Password needs to be between 6 and 15 characters long and there needs to be at least one numeric digit in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if ((!(document.myForm.userpassword.value.match(numberRequired))) && (!(document.myForm.userpassword.value.match(symbolRequired)))){
+alert(" There needs to be at least one numeric digit and at least one special symbol in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if ((!(document.myForm.userpassword.value.match(symbolRequired))) && (!(document.myForm.userpassword.value.match(letterRequired)))){
+alert(" There needs to be at least one special symbol and at least one uppercase letter in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+
+else if (!(document.myForm.userpassword.value.match(numberRequired))){
+alert("There needs to be at least one numeric digit in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if (!(document.myForm.userpassword.value.match(letterRequired))){
+alert("There needs to be at least one uppercase letter in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+
+else if (!(document.myForm.userpassword.value.match(symbolRequired))){
+alert("There needs to be at least one special symbol in password !!!");
+document.myForm.userpassword.focus();
+return false;
+}
+document.myForm.submit.focus();
+return true;
+}
+function finalCheck() {
+if(!(checkIfEmptyName()))
+{
+document.myForm.submit.focus();
+return false;
+}
+}
+
+</script>
+<style>
+
+.container_one {
+  width:1000px; 
+  height: 150px;
+}
+
+
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=date], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0099cc;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.imgcontainer {
+  email-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+
+
+
+
+</style>
+</head>
+<body onload ="setFocus();">
+    <header class="site-header">
+
+
+<header class="site-header">
+        <div class="nav-bar">
+            <div class="container">
+              <div class="row">
+                 <div class="col-12 d-flex flex-wrap align-items-center">
+                   <div class="site-branding d-flex align-items-center">
+                           <a class="d-block" href="index.html" rel="home"><img class="d-block" src="images/medica.gif" alt="logo" width="300" height="150"></a>
+
+
+</div>
+
+
+
+                    </div>
+                </div>
+            	</div>
+      	        </div>
+
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-content-wrap" style="background-image: url('images/homepage.jpg')">
+                    <div class="hero-content-overlay position-absolute w-100 h-100">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 col-lg-12 d-flex flex-column justify-content-center align-items-start">
+                                    <header class="entry-header">  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+ <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+                                    </header>  
+
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+<br>   <br> <br> <br> <br> <br> 
+<h1> Welcome to <br> Medica Website ! </h1>
+<br> <br> <br> <br> <br> 
+<table style="background-color:#FAFCFC; color:black;" cellspacing="5" cellpading="5" width="60%" align="center"> <tr> <td>
+<p align="justfy"> <font size="3"> 
+
+<h1 align="center"> <font size="5"> Registration Form </font></h1>
+
+  <!-- div class="imgcontainer" -->
+    <!-- img src="images/avatar.png" alt="Avatar" class="avatar height"150px" width="150px"-->
+  <!--/div -->
+
+  <div class="container">
+    <label for="name"><b>First Name:</b></label>
+    <input type="text" placeholder="Enter First Name" name="name" onblur="checkIfEmptyName()"required>
+
+  <label for="uname"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+<label for="birthday"><b>Date of birthday: </b></label>
+	<input type="date" name="birthday" required> <br> <br>
+
+  <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+
+  <label for="email"> <b> E-mail:</b></label>
+        <input type="email" placeholder="Enter E-mail Address" name="email" id="email" required> <br> <br>
+
+   <label for="password"><b>Password: </b></label> 
+    	<input type="password" placeholder="Enter Password" name="userpassword" required> 
+
+<form method="get" action="index.html">    <button type="submit"> Submit </button>  </form>
+
+</form>
+
+
+</p>
+</font>
+</td> </tr> </style></table>
+
+
+<br> <br> <br> <br> <br>
+
+
+
+                        
+
+		<div class="pagination-wrap position-absolute w-100">
+                <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+           
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br>
+
+<br> <br> <br> <br> 
+
+<table style="color:#ffffff; background-color:#000033;" width="100%" height="60%" cellpading="2" cellspacing="2" > <style="color:white;">
+<tr><td align="right" weight="34%"> <img src="images/medica.gif" alt="" width="240" height="120"> </td> 
+<td align="center" weight="33%"> @ Medica 2018 <br><br> 71000 Sarajevo, Bosnia and Herzegovina <br><br> +378 123 456 <br><br> medica@info.com </td> 
+
+</tr> 
+</style>
+</table>
+</div>
+</div>
+</div>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countdown.min.js'></script>
+    <script type='text/javascript' src='js/circle-progress.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
+    <script type='text/javascript' src='js/jquery.barfiller.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>
+
+   
